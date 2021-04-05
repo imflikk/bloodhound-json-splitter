@@ -21,7 +21,7 @@ with open(input_file, 'r', encoding='utf-8-sig') as f:
 
 			tmp_data = {'users': []}
 	
-			tmp_data['users'] = data['users'][:obj_size * count]
+			tmp_data['users'] = data['users'][obj_size * (count - 1):obj_size * count]
 			tmp_data['meta'] = {"count": len(tmp_data['users']), "type": "users", "version": 3}
 
 			new_json_data = json.dumps(tmp_data)
